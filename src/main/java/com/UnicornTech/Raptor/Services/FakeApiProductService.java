@@ -1,24 +1,17 @@
 package com.UnicornTech.Raptor.Services;
 
 import com.UnicornTech.Raptor.DTO.FakeApiDto;
-import com.UnicornTech.Raptor.ExceptionHandler.NotFoundExceptionHandler;
-import com.UnicornTech.Raptor.ExceptionModel.NotFoundException;
 import com.UnicornTech.Raptor.Models.Product;
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RequestCallback;
 import org.springframework.web.client.ResponseExtractor;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.client.support.RestTemplateAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
 
 @Service("fakeStoreApiImpl")
 public class FakeApiProductService implements ProductInterface<FakeApiDto>{

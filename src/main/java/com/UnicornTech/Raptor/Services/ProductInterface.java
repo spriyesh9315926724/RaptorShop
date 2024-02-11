@@ -1,10 +1,7 @@
 package com.UnicornTech.Raptor.Services;
 
-import com.UnicornTech.Raptor.DTO.FakeApiDto;
-import com.UnicornTech.Raptor.ExceptionModel.NotFoundException;
 import com.UnicornTech.Raptor.Models.Product;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

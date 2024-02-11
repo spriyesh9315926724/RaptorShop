@@ -6,11 +6,11 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 @Setter
-public class NotFoundException extends Exception {
+public class ExceptionModal extends Exception {
     private HttpStatus status;
     private String message;
 
-    public NotFoundException(HttpStatus status,String message){
+    public ExceptionModal(HttpStatus status, String message){
         super(message);
         this.message = message;
         this.status = status;

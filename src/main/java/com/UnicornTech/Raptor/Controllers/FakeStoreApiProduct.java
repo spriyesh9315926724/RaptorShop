@@ -1,11 +1,10 @@
 package com.UnicornTech.Raptor.Controllers;
 
 import com.UnicornTech.Raptor.DTO.FakeApiDto;
-import com.UnicornTech.Raptor.ExceptionModel.NotFoundException;
+import com.UnicornTech.Raptor.ExceptionModel.ExceptionModal;
 import com.UnicornTech.Raptor.Models.Product;
 import com.UnicornTech.Raptor.Services.ProductInterface;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,10 +27,10 @@ public class FakeStoreApiProduct {
 
     //Get products by id
     @GetMapping("{id}")
-    public Product getProductById(@PathVariable("id") Integer id) throws NotFoundException {
+    public Product getProductById(@PathVariable("id") Integer id) throws ExceptionModal {
         Product product =  in.getProductById(id);
         if(product == null){
-            throw new NotFoundException(HttpStatus.NOT_FOUND,"Object not found");
+            throw new ExceptionModal(HttpStatus.NOT_FOUND,"Object not found");
         }
         return product;
     }
@@ -51,7 +50,7 @@ public class FakeStoreApiProduct {
     //Deletes a product
 
     @DeleteMapping("/delete/{productId}")
-    public Product deleteProduct(@PathVariable("productId") Integer id) throws NotFoundException {
+    public Product deleteProduct(@PathVariable("productId") Integer id) throws ExceptionModal {
         return in.deleteProduct(id);
     }
 
